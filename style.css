@@ -548,7 +548,7 @@ header.scrolled {
 
 .pres-img-wrapper {
   position: relative;
-  max-width: 42rem;
+  max-width: 64rem;
 }
 
 .pres-img {
@@ -557,7 +557,6 @@ header.scrolled {
   max-height: 58rem;
   object-fit: contain;
   display: block;
-  background: var(--dark-3);
   filter: grayscale(20%);
   transition: filter var(--transition);
 }
