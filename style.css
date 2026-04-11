@@ -384,6 +384,42 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
+.hero-social {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.8rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white-soft);
+  font-size: 1.3rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+
+.hero-social-icon i {
+  font-size: 1.5rem;
+  color: var(--rose);
+  transition: var(--transition);
+}
+
+.hero-social-icon:hover {
+  border-color: var(--rose);
+  color: var(--white);
+  background: rgba(255, 0, 111, 0.08);
+}
+
+.hero-social-icon:hover i {
+  transform: scale(1.15);
+}
+
 /* Hero Visual */
 .hero-visual {
   flex: 1 1 40rem;
