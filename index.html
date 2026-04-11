@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Soda</title>
+  <link rel="icon" type="image/png" href="assets/pfp.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-rose">✦</span>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <a href="#accueil" class="logo">✦ <span>Soda</span></a>
+    <nav class="navbar" id="navbar">
+      <ul>
+        <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+        <li><a href="#presentation" class="nav-link">Présentation</a></li>
+        <li><a href="#digital" class="nav-link">Digital</a></li>
+        <li><a href="#traditionnel" class="nav-link">Traditionnel</a></li>
+        <li><a href="#inspiration" class="nav-link">Inspiration</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- SCROLL TOP -->
+  <a href="#accueil" id="scroll-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- ===================== ACCUEIL ===================== -->
+  <section class="accueil" id="accueil">
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="hero-blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">Artiste & Créatrice</div>
+      <h1 class="hero-title reveal-up">
+        L'art comme<br /><em>langage du cœur</em>
+      </h1>
+      <p class="hero-sub reveal-up">
+        Bienvenue dans mon univers créatif — entre ombres et lumières, pixels et tracés à la main.
+      </p>
+      <div class="hero-cta reveal-up">
+        <a href="#digital" class="btn-primary">Voir mes œuvres</a>
+        <a href="#presentation" class="btn-ghost">À propos</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal-right">
+      <div class="hero-frame">
+        <img src="assets/pied.png" alt="Œuvre principale" class="hero-img" />
+        <div class="hero-frame-deco"></div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Œuvres</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Univers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Inspiration</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PRÉSENTATION ===================== -->
+  <section class="presentation" id="presentation">
+    <div class="pres-deco-text">ARTISTE</div>
+    <div class="pres-inner">
+      <div class="pres-image-side reveal-left">
+        <div class="pres-img-wrapper">
+          <img src="assets/pied.png" alt="Portrait" class="pres-img" />
+          <div class="pres-img-border"></div>
+          <div class="pres-img-tag">
+            <i class="fas fa-palette"></i> Créatrice depuis toujours
+          </div>
+        </div>
+      </div>
+      <div class="pres-text-side reveal-right">
+        <div class="section-label">— Qui suis-je</div>
+        <h2 class="section-title">Bonjour, je suis <em>Soda</em></h2>
+        <p class="pres-intro">
+          Artiste digitale et traditionnelle, le dessin est ma façon de m'exprimer depuis toujours.
+        </p>
+        <p class="pres-body">
+          Je partage ici mes créations à travers trois univers : le digital, le traditionnel, et mes inspirations du quotidien. Chaque dessin est un petit bout de moi.
+        </p>
+        <div class="pres-tags">
+          <span class="tag">Illustration</span>
+          <span class="tag">Character design</span>
+          <span class="tag">Aquarelle</span>
+          <span class="tag">Fanart</span>
+          <span class="tag">Crayon</span>
+        </div>
+        <a href="#digital" class="btn-primary">Découvrir mes créations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIGITAL ===================== -->
+  <section class="gallery-section" id="digital">
+    <div class="gallery-header reveal-up">
+      <div class="section-label">— Art Digital</div>
+      <h2 class="section-title">Créations <em>numériques</em></h2>
+      <p class="gallery-desc">Dessins réalisés sur tablette graphique — couleurs vives, détails fins, univers fantastiques.</p>
+    </div>
+
+    <!-- FEATURED PIECE -->
+    <div class="featured-work reveal-up">
+      <div class="featured-img-wrap">
+        <img src="assets/pied2.png" alt="Œuvre digitale vedette" />
+        <div class="featured-overlay">
+          <span>Voir en grand</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASONRY GRID -->
+    <div class="masonry-grid">
+      <div class="masonry-item tall reveal-up" style="--d:0.1s">
+        <img src="assets/pied.png" alt="Digital 1" />
+      </div>
+      <div class="masonry-item reveal-up" style="--d:0.2s">
+        <img src="assets/pied.png" alt="Digital 2" />
+      </div>
+      <div class="masonry-item reveal-up" style="--d:0.3s">
+        <img src="assets/pied.png" alt="Digital 3" />
+      </div>
+      <div class="masonry-item wide reveal-up" style="--d:0.4s">
+        <img src="assets/pied.png" alt="Digital 4" />
+      </div>
+      <div class="masonry-item reveal-up" style="--d:0.5s">
+        <img src="assets/pied.png" alt="Digital 5" />
+      </div>
+      <div class="masonry-item tall reveal-up" style="--d:0.6s">
+        <img src="assets/pied.png" alt="Digital 6" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRADITIONNEL ===================== -->
+  <section class="gallery-section trad-section" id="traditionnel">
+    <div class="gallery-header reveal-up">
+      <div class="section-label">— Art Traditionnel</div>
+      <h2 class="section-title">Le geste <em>à la main</em></h2>
+      <p class="gallery-desc">Crayon, encre, aquarelle… L'authenticité du support physique, la trace du geste réel.</p>
+    </div>
+
+    <!-- HORIZONTAL SCROLL STRIP -->
+    <div class="h-scroll-wrapper reveal-up">
+      <div class="h-scroll-track" id="trad-track">
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 1" />
+        </div>
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 2" />
+        </div>
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 3" />
+        </div>
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 4" />
+        </div>
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 5" />
+        </div>
+        <div class="h-scroll-card">
+          <img src="assets/pied.png" alt="Trad 6" />
+        </div>
+      </div>
+      <div class="h-scroll-btns">
+        <button class="h-btn" id="trad-prev"><i class="fas fa-arrow-left"></i></button>
+        <button class="h-btn" id="trad-next"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- POLAROID GRID -->
+    <div class="polaroid-grid">
+      <div class="polaroid reveal-up" style="--r:-3deg; --d:0.1s">
+        <img src="assets/pied.png" alt="Polaroid 1" />
+      </div>
+      <div class="polaroid reveal-up" style="--r:2deg; --d:0.2s">
+        <img src="assets/pied.png" alt="Polaroid 2" />
+      </div>
+      <div class="polaroid reveal-up" style="--r:-1.5deg; --d:0.3s">
+        <img src="assets/pied.png" alt="Polaroid 3" />
+      </div>
+      <div class="polaroid reveal-up" style="--r:3.5deg; --d:0.4s">
+        <img src="assets/pied.png" alt="Polaroid 4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSPIRATION ===================== -->
+  <section class="inspiration-section" id="inspiration">
+    <div class="insp-bg-text">INSPO</div>
+    <div class="gallery-header reveal-up">
+      <div class="section-label">— Inspiration</div>
+      <h2 class="section-title">Ce qui <em>nourrit</em> ma créativité</h2>
+      <p class="gallery-desc">Références visuelles, humeurs, palettes de couleurs — les sources de mon univers artistique.</p>
+    </div>
+
+    <!-- MOOD BOARD STYLE -->
+    <div class="moodboard reveal-up">
+      <div class="mood-cell mood-tall">
+        <img src="assets/pied.png" alt="Inspo 1" />
+      </div>
+      <div class="mood-col">
+        <div class="mood-cell">
+          <img src="assets/pied.png" alt="Inspo 2" />
+        </div>
+        <div class="mood-cell mood-quote">
+          <blockquote>"Si la vie te jete un kabyle dessus, tu part en roulant."</blockquote>
+          <cite>— Dalia</cite>
+        </div>
+      </div>
+      <div class="mood-col">
+        <div class="mood-cell mood-wide">
+          <img src="assets/pied.png" alt="Inspo 3" />
+        </div>
+        <div class="mood-cell">
+          <img src="assets/pied.png" alt="Inspo 4" />
+        </div>
+      </div>
+      <div class="mood-cell mood-tall">
+        <img src="assets/pied.png" alt="Inspo 5" />
+      </div>
+    </div>
+
+    <!-- COLOR PALETTE STRIP -->
+    <div class="palette-section reveal-up">
+      <div class="section-label">— Ma palette de couleurs</div>
+      <div class="palette-strip">
+        <div class="palette-swatch" style="--c:#FF006F"><span>#FF006F</span></div>
+        <div class="palette-swatch" style="--c:#ff5ca0"><span>#ff5ca0</span></div>
+        <div class="palette-swatch" style="--c:#1a1a1a"><span>#1a1a1a</span></div>
+        <div class="palette-swatch" style="--c:#2e2e2e"><span>#2e2e2e</span></div>
+        <div class="palette-swatch" style="--c:#f5e6ee"><span>#f5e6ee</span></div>
+        <div class="palette-swatch" style="--c:#cc0059"><span>#cc0059</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lb-close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-nav lb-prev" id="lb-prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lb-img" />
+    </div>
+    <button class="lightbox-nav lb-next" id="lb-next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">✦ <span>Soda</span></span>
+        <p>Art digital & traditionnel, créé avec passion.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#digital">Digital</a>
+        <a href="#traditionnel">Traditionnel</a>
+        <a href="#inspiration">Inspiration</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@.enan4n" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/4miiax" class="social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Merci d'avoir consulté mon portfolio !</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
