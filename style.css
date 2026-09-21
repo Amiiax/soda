@@ -1167,7 +1167,7 @@ header.scrolled {
     bottom: 1rem;
     width: 16px;
     height: 16px;
-    opacity: 0.26;
+    opacity: 0.46;
     filter: brightness(0.9);
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
