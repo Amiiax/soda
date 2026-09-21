@@ -1160,3 +1160,36 @@ header.scrolled {
 
   .gallery-section, .presentation, .inspiration-section { padding: 7rem 5%; }
 }
+
+.softskill-secret-games {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1rem;
+    width: 16px;
+    height: 16px;
+    opacity: 0.26;
+    filter: brightness(0.9);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.softskill-secret-games img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.softskill-secret-games:hover {
+    opacity: 0.42;
+    transform: scale(1.12);
+}
+
+/* Knight un peu plus grand que les autres secrets */
+.softskill-secret-games.hk-secret {
+    width: 30px;
+    height: 30px;
+    transform: translateX(8px);
+}
+
+.softskill-secret-games.hk-secret:hover {
+    transform: translateX(10px) scale(1.12);
+}
