@@ -12,16 +12,21 @@ const follower = document.getElementById('cursor-follower');
 let mx = 0, my = 0, fx = 0, fy = 0;
 
 document.addEventListener('mousemove', (e) => {
+  if (document.body.classList.contains('games-modal-open')) return;
   mx = e.clientX; my = e.clientY;
   cursor.style.left = mx + 'px';
   cursor.style.top = my + 'px';
 });
 
 function animateFollower() {
-  fx += (mx - fx) * 0.12;
-  fy += (my - fy) * 0.12;
-  follower.style.left = fx + 'px';
-  follower.style.top = fy + 'px';
+  // Coupe l'animation du curseur pendant qu'un jeu tourne dans le modal,
+  // pour libérer du CPU/GPU pour le jeu
+  if (!document.body.classList.contains('games-modal-open')) {
+    fx += (mx - fx) * 0.12;
+    fy += (my - fy) * 0.12;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+  }
   requestAnimationFrame(animateFollower);
 }
 animateFollower();

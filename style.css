@@ -1211,6 +1211,18 @@ header.scrolled {
     cursor: auto !important;
 }
 
+/* Coupe toutes les animations CSS en boucle de la page (blobs, pulses...)
+   pendant qu'un jeu tourne dans le modal, pour lui laisser le GPU */
+.games-modal-open .hero-blob,
+.games-modal-open .scroll-line,
+.games-modal-open [class*="reveal-"] {
+    animation-play-state: paused !important;
+}
+
+.games-modal-open .hero-bg {
+    display: none !important;
+}
+
 .games-modal {
     position: fixed;
     inset: 0;
@@ -1218,8 +1230,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(14, 14, 14, 0.88);
-    backdrop-filter: blur(6px);
+    background: rgba(14, 14, 14, 0.94);
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition), visibility var(--transition);
