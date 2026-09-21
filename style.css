@@ -1193,3 +1193,114 @@ header.scrolled {
 .softskill-secret-games.hk-secret:hover {
     transform: translateX(10px) scale(1.12);
 }
+/* ===================================================
+   SECRET GAMES MODAL
+   =================================================== */
+.games-modal-open {
+    overflow: hidden !important;
+}
+
+.games-modal-open #cursor,
+.games-modal-open #cursor-follower {
+    display: none !important;
+}
+
+.games-modal-open,
+.games-modal-open body,
+.games-modal-open * {
+    cursor: auto !important;
+}
+
+.games-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 14, 14, 0.88);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    padding: 3rem;
+}
+
+.games-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.games-modal-box {
+    position: relative;
+    width: min(900px, 100%);
+    height: min(640px, 85vh);
+    background: var(--dark-2);
+    border: 1px solid var(--white-faint);
+    border-radius: 1.6rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--rose-glow-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.94) translateY(10px);
+    transition: transform var(--transition);
+}
+
+.games-modal.active .games-modal-box {
+    transform: scale(1) translateY(0);
+}
+
+.games-modal-box--fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0;
+}
+
+.games-modal-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    background: var(--dark-3);
+    border-bottom: 1px solid var(--white-faint);
+}
+
+.games-modal-btn {
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-4);
+    color: var(--white-soft);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: none;
+    transition: var(--transition-fast);
+}
+
+.games-modal-btn:hover {
+    background: var(--rose);
+    color: var(--white);
+    transform: scale(1.08);
+}
+
+.games-modal-btn--close:hover {
+    background: #e2314f;
+}
+
+.games-modal-frame {
+    flex: 1;
+    width: 100%;
+    background: #000;
+}
+
+@media (max-width: 768px) {
+    .games-modal {
+        padding: 1rem;
+    }
+    .games-modal-box {
+        height: min(560px, 80vh);
+        border-radius: 1.2rem;
+    }
+}

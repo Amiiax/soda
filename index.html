@@ -311,6 +311,21 @@
     </div>
   </footer>
 
+  <!-- SECRET GAMES MODAL -->
+  <div class="games-modal" id="gamesModal" aria-hidden="true">
+    <div class="games-modal-box">
+      <div class="games-modal-bar">
+        <button class="games-modal-btn" id="gamesModalFullscreen" aria-label="Plein écran">
+          <i class="fas fa-expand"></i>
+        </button>
+        <button class="games-modal-btn games-modal-btn--close" id="gamesModalClose" aria-label="Fermer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <iframe id="gamesModalFrame" class="games-modal-frame" src="about:blank" title="Jeu secret" allowfullscreen></iframe>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -94,7 +94,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 /* ===== SMOOTH SCROLL ===== */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.softskill-secret-games)').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -102,6 +102,85 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+});
+
+/* ===================================================
+   GAMES SECRET MODAL LOGIC — UNIVERSAL
+   Pour ajouter un jeu : créer un lien .softskill-secret-games
+   avec data-game="games/nomDuJeu.html", c'est tout.
+   =================================================== */
+const gamesModal = document.getElementById('gamesModal');
+const gamesModalFrame = document.getElementById('gamesModalFrame');
+const gamesModalClose = document.getElementById('gamesModalClose');
+const gamesModalFullscreen = document.getElementById('gamesModalFullscreen');
+
+function openGameModal(gameSrc) {
+  if (!gamesModal || !gamesModalFrame) return;
+  gamesModalFrame.src = gameSrc;
+  gamesModal.classList.add('active');
+  gamesModal.setAttribute('aria-hidden', 'false');
+  document.documentElement.classList.add('games-modal-open');
+  document.body.classList.add('games-modal-open');
+}
+
+let isFakeFullscreen = false;
+
+function closeGameModal() {
+  if (!gamesModal) return;
+  // Quitter le faux fullscreen si actif
+  const box = document.querySelector('.games-modal-box');
+  if (box && isFakeFullscreen) {
+    box.classList.remove('games-modal-box--fullscreen');
+    isFakeFullscreen = false;
+    if (gamesModalFullscreen) {
+      gamesModalFullscreen.querySelector('i').className = 'fas fa-expand';
+    }
+  }
+  gamesModal.classList.remove('active');
+  gamesModal.setAttribute('aria-hidden', 'true');
+  if (gamesModalFrame) gamesModalFrame.src = 'about:blank';
+  document.documentElement.classList.remove('games-modal-open');
+  document.body.classList.remove('games-modal-open');
+}
+
+function toggleFullscreen() {
+  const box = document.querySelector('.games-modal-box');
+  if (!box || !gamesModalFullscreen) return;
+  const icon = gamesModalFullscreen.querySelector('i');
+  isFakeFullscreen = !isFakeFullscreen;
+  box.classList.toggle('games-modal-box--fullscreen', isFakeFullscreen);
+  icon.className = isFakeFullscreen ? 'fas fa-compress' : 'fas fa-expand';
+  gamesModalFullscreen.setAttribute('aria-label', isFakeFullscreen ? 'Quitter le plein écran' : 'Plein écran');
+}
+
+// Attache le listener sur tous les liens secrets (présents et futurs via delegation)
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('.softskill-secret-games');
+  if (trigger) {
+    e.preventDefault();
+    const gameSrc = trigger.dataset.game;
+    if (gameSrc) openGameModal(gameSrc);
+  }
+});
+
+if (gamesModalClose) {
+  gamesModalClose.addEventListener('click', closeGameModal);
+}
+
+if (gamesModalFullscreen) {
+  gamesModalFullscreen.addEventListener('click', toggleFullscreen);
+}
+
+if (gamesModal) {
+  gamesModal.addEventListener('click', (e) => {
+    if (e.target === gamesModal) closeGameModal();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && gamesModal && gamesModal.classList.contains('active')) {
+    closeGameModal();
+  }
 });
 
 /* ===== REVEAL ON SCROLL ===== */
@@ -163,10 +242,10 @@ const lbClose = document.getElementById('lb-close');
 const lbPrev = document.getElementById('lb-prev');
 const lbNext = document.getElementById('lb-next');
 
-// Collect all gallery images
+// Collect all gallery images (exclut les liens de jeux secrets)
 const galleryImages = Array.from(document.querySelectorAll(
   '.masonry-item img, .featured-img-wrap img, .h-scroll-card img, .polaroid img, .mood-cell img'
-));
+)).filter(img => !img.closest('.softskill-secret-games'));
 
 let currentLbIndex = 0;
 
